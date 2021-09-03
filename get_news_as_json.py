@@ -34,7 +34,7 @@ def getArticleLinks(tag, page):
       
 if __name__ == '__main__':
 
-    getArticleLinks('Sport', 1)
+    getArticleLinks('art-culture', 15)
           
     with open('/data/articles_'+datetime.now().strftime("%Y-%m-%d-%H-%M-%S")+'.json', 'w') as outfile:
         json.dump(dataAll, outfile)
