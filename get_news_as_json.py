@@ -21,7 +21,8 @@ def getArticleLinks(tag, page):
         
         if content_image:
             content_image = content_image.find('img')
-            content_image_src = content_image['src']
+            content_image_src = content_image['src'].replace("w32", "w640")
+            content_image_src = content_image_src.replace("q50", "q75")
             print(content_image['src'])
 
         content = item.find("div", {"class":"contentBox bg-w noMedia"})
@@ -40,7 +41,7 @@ def getArticleLinks(tag, page):
     return
       
 if __name__ == '__main__':
-    getArticleLinks('art-culture', 1)
+    getArticleLinks('sport', 1)
           
     with open('/data/today/json/articles_'+datetime.now().strftime("%Y-%m-%d-%H-%M-%S")+'.json', 'w') as outfile:
         json.dump(dataAll, outfile)
