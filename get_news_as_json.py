@@ -48,7 +48,7 @@ def getArticleLinks(tag, page):
             dataAll.append(data)
             time.sleep(1)
             print(data)
-            
+
     return
       
 if __name__ == '__main__':
@@ -56,4 +56,3 @@ if __name__ == '__main__':
           
     with open('/data/today/json/articles_' + 'trtworld_' + datetime.now().strftime("%Y-%m-%d-%H-%M-%S")+'.json', 'w') as outfile:
         json.dump(dataAll, outfile)
-          
